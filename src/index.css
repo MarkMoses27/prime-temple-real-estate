@@ -1,0 +1,135 @@
+/* Import the Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
+/* CSS Variables for Website Colors */
+:root {
+  --white: #FFFFFF;
+  --gold: #FFD700;
+  --black: #000000;
+  --green: #008000;
+
+  /* Optional Additional Shades */
+  --gold-light: #FFECB3;  /* Light gold for backgrounds */
+  --green-dark: #006400;  /* Darker green for contrast */
+  --gray-light: #F5F5F5;  /* Light gray for subtle backgrounds */
+  --gray-dark: #333333;   /* Dark gray for text contrast */
+}
+
+/* Reset and Normalize Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Apply Base Font */
+body {
+  font-family: "Afacad Flux", sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+  background-color: var(--gray-light);  /* Light background */
+  color: var(--gray-dark); /* Default text color */
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--black); /* Dark color for headings */
+  line-height: 1.2;
+  margin-bottom: 1rem; /* Space below headings */
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 1.5rem;
+  color: var(--gray-dark); /* Consistent text color */
+}
+
+/* Links */
+a {
+  color: var(--green); /* Green color for links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--gold); /* Gold color for hover */
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: var(--gold);
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: var(--gold-light); /* Slightly lighter gold */
+}
+
+/* Image Styling */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container for Padding and Centering Content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* General Spacing for Sections */
+section {
+  padding: 4rem 0;
+}
+
+/* List Styling */
+ul, ol {
+  margin-left: 1.5rem;
+}
+
+ul li, ol li {
+  margin-bottom: 0.75rem;
+}
+
+/* Forms */
+input, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--green); /* Green focus */
+  outline: none;
+}
+
+/* Footer Styling */
+footer {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: var(--gold);
+}
+
+footer a:hover {
+  color: var(--gold-light);
+}
