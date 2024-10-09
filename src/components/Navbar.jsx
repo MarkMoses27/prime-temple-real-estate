@@ -7,9 +7,14 @@ import LOGO from '../assets/temple__logo.jpg';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
   };
 
   return (
@@ -23,12 +28,12 @@ const Navbar = () => {
           <ul className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
             <li><Link to="/" className="nav-link">Home</Link></li>
             <li><Link to="/about" className="nav-link">About</Link></li>
-            <li className="dropdown">
+            <li className="dropdown" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
               <Link to="#" className="nav-link">
                 Services <FontAwesomeIcon icon={faChevronDown} className="dropdown-icon" />
               </Link>
-              <ul className="dropdown-content">
-                <li><Link to="/properties" className="dropdown-link">Property Listings</Link></li>
+              <ul className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
+                <li><Link to="/properties" className="dropdown-link">Property Listings</Link></li> {/* Links to routes */}
                 <li><Link to="/consulting" className="dropdown-link">Consulting</Link></li>
                 <li><Link to="/investments" className="dropdown-link">Investments</Link></li>
               </ul>
