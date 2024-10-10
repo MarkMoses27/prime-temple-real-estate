@@ -1,4 +1,3 @@
-// src/components/FeaturedProperties.jsx
 
 import './FeaturedProperties.css'; // Add styles here
 
@@ -9,7 +8,7 @@ const FeaturedProperties = () => {
       title: 'Luxury Villa in Nairobi',
       price: 'KES. 1,200,000',
       location: 'Nairobi, Kenya',
-      image: '/assets/property1.jpg', // Replace with actual images
+      image: '/assets/property1.jpg',
     },
     {
       id: 2,

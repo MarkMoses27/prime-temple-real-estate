@@ -4,6 +4,8 @@ import HeroSection from '../components/HeroSection';
 import SearchBar from '../components/SearchBar';
 import SearchResults from '../components/SearchResults';
 import FeaturedProperties from '../components/FeaturedProperties';
+import HowItWorks from '../components/HowItWorks';
+import EnquiryForm from '../components/EnquiryForm';
 
 const Home = () => {
   const [filteredProperties, setFilteredProperties] = useState([]);
@@ -31,6 +33,8 @@ const Home = () => {
       <SearchBar onSearch={handleSearch} />
       <SearchResults properties={filteredProperties} />
       <FeaturedProperties />
+      <HowItWorks />
+      <EnquiryForm />
     </div>
   );
 };

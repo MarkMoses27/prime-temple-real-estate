@@ -2,13 +2,16 @@
 import { useParams, Link } from 'react-router-dom';
 import './BlogDetails.css';
 
+import INVESTMENT_IMAGE from '../assets/invest-real-estate.jpg';
+import LUXURY_KENYA from '../assets/luxury-kenya.jpg';
+import REAL_ESTATE_FUTURE from '../assets/real-estate-future.jpg';
 const blogPosts = [
   {
     id: 1,
     title: 'The Future of Real Estate',
-    author: 'John Doe',
+    author: 'Mark Malala',
     date: 'October 3, 2024',
-    heroImage: '/images/real-estate-future.jpg',
+    heroImage: '..assets/real-estate-future.jpg',
     content: `
       Real estate is changing rapidly, and it’s crucial to stay ahead of the curve.
       In this article, we’ll explore the key trends shaping the future of real estate:
@@ -20,39 +23,41 @@ const blogPosts = [
       With climate change becoming a pressing issue, sustainable practices in construction are no longer optional.
       Buyers are looking for green homes with energy-efficient features.
     `,
+
+
     relatedPosts: [
-      { id: 2, title: 'How to Invest in Real Estate Wisely', image: '/images/invest-real-estate.jpg' },
-      { id: 3, title: 'Top 10 Luxury Properties in Kenya', image: '/images/luxury-kenya.jpg' }
+      { id: 2, title: 'How to Invest in Real Estate Wisely', image: INVESTMENT_IMAGE },
+      { id: 3, title: 'Top 10 Luxury Properties in Kenya', image: LUXURY_KENYA }
     ]
   },
   {
     id: 2,
     title: 'How to Invest in Real Estate Wisely',
-    author: 'Jane Smith',
+    author: 'Mark Malala',
     date: 'September 20, 2024',
-    heroImage: '/images/invest-real-estate.jpg',
+    heroImage: INVESTMENT_IMAGE,
     content: `
       Real estate investment is one of the best ways to build wealth. 
       In this article, we'll cover strategies for investing wisely in real estate.
     `,
     relatedPosts: [
-      { id: 1, title: 'The Future of Real Estate', image: '/images/real-estate-future.jpg' },
-      { id: 3, title: 'Top 10 Luxury Properties in Kenya', image: '/images/luxury-kenya.jpg' }
+      { id: 1, title: 'The Future of Real Estate', image: REAL_ESTATE_FUTURE },
+      { id: 3, title: 'Top 10 Luxury Properties in Kenya', image: LUXURY_KENYA }
     ]
   },
   {
     id: 3,
     title: 'Top 10 Luxury Properties in Kenya',
-    author: 'Mark Lumumba',
+    author: 'Chris Lumumba',
     date: 'August 15, 2024',
-    heroImage: '/images/luxury-kenya.jpg',
+    heroImage: LUXURY_KENYA,
     content: `
       Explore the top 10 luxury properties across Kenya. From beachfront homes to penthouse suites, 
       these properties redefine luxury living.
     `,
     relatedPosts: [
-      { id: 1, title: 'The Future of Real Estate', image: '/images/real-estate-future.jpg' },
-      { id: 2, title: 'How to Invest in Real Estate Wisely', image: '/images/invest-real-estate.jpg' }
+      { id: 1, title: 'The Future of Real Estate', image: REAL_ESTATE_FUTURE },
+      { id: 2, title: 'How to Invest in Real Estate Wisely', image: INVESTMENT_IMAGE }
     ]
   }
 ];

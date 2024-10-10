@@ -1,84 +1,167 @@
+/* Base Styles and Variables */
+:root {
+  --white: #FFFFFF;
+  --gold: #FFD700;
+  --black: #000000;
+  --green: #008000;
+  --gray-light: #F5F5F5;
+  --gray-dark: #333333;
+  --accent-color: #FFD700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
+
+/* About Us Section */
 .about-us-section {
-    padding: 4rem 2rem;
-    background-color: var(--white);
-    color: var(--gray-dark);
-  }
-  
-  .about-us-header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  
+  background-color: var(--gray-light);
+  padding: 4rem 2rem;
+  color: var(--gray-dark);
+}
+
+.about-us-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-us-header h1 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.about-us-header p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--gray-dark);
+}
+
+/* Content Styling */
+.about-us-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mission-statement,
+.vision-statement,
+.core-values,
+.leadership,
+.commitment {
+  margin-bottom: 2.5rem;
+}
+
+.mission-statement h2,
+.vision-statement h2,
+.core-values h2,
+.leadership h2,
+.commitment h2 {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.mission-statement p,
+.vision-statement p,
+.leadership p,
+.commitment p {
+  font-size: 1rem;
+  color: var(--gray-dark);
+  line-height: 1.7;
+}
+
+.core-values ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.core-values li {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--gray-dark);
+  display: flex;
+  align-items: flex-start;
+}
+
+.core-values li::before {
+  content: "•";
+  color: var(--green);
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-right: 1rem;
+}
+
+/* Hover and Interactive Styles */
+h2:hover {
+  color: var(--green);
+  transition: color 0.3s ease-in-out;
+}
+
+p:hover {
+  color: var(--black);
+  transition: color 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .about-us-header h1 {
-    font-size: 2.5rem;
-    color: var(--gold);
+    font-size: 2rem;
   }
-  
+
   .about-us-header p {
-    font-size: 1.2rem;
-    color: var(--gray-dark);
-    margin-top: 1rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 1rem;
+    max-width: 90%;
   }
-  
-  .about-us-content {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: var(--gray-light);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .mission-statement h2,
+  .vision-statement h2,
+  .core-values h2,
+  .leadership h2,
+  .commitment h2 {
+    font-size: 1.5rem;
   }
-  
-  .about-us-content h2 {
+
+  .mission-statement p,
+  .vision-statement p,
+  .leadership p,
+  .commitment p {
+    font-size: 0.9rem;
+  }
+
+  .core-values li {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us-header h1 {
     font-size: 1.8rem;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
   }
-  
-  .about-us-content p {
-    font-size: 1rem;
-    color: var(--gray-dark);
-    margin-bottom: 2rem;
+
+  .about-us-header p {
+    font-size: 0.9rem;
   }
-  
-  .company-details ul {
-    list-style-type: none;
-    padding: 0;
+
+  .mission-statement h2,
+  .vision-statement h2,
+  .core-values h2,
+  .leadership h2,
+  .commitment h2 {
+    font-size: 1.2rem;
   }
-  
-  .company-details li {
-    font-size: 1rem;
-    color: var(--gray-dark);
-    margin-bottom: 1rem;
+
+  .mission-statement p,
+  .vision-statement p,
+  .leadership p,
+  .commitment p {
+    font-size: 0.8rem;
   }
-  
-  .company-details strong {
-    color: var(--green-dark);
-  }
-  
-  .directors p {
-    font-size: 1rem;
-    color: var(--gray-dark);
-  }
-  
-  @media (max-width: 768px) {
-    .about-us-header h1 {
-      font-size: 2rem;
-    }
-  
-    .about-us-header p {
-      font-size: 1rem;
-    }
-  
-    .about-us-content {
-      padding: 1.5rem;
-    }
-  
-    .about-us-content h2 {
-      font-size: 1.5rem;
-    }
-  }
-  
+}

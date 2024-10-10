@@ -1,6 +1,13 @@
 import { useEffect } from 'react';
 import './PropertyListings.css';
 
+import VILLA from '../assets/villa.jpg';
+import APARTMENT from '../assets/apartment.jpg';
+import COTTAGE from '../assets/cottage.jpg';
+import BEACHHOUSE from '../assets/beach-house.jpg';
+import TOWNHOUSE from '../assets/townhouse.jpg';
+import PENTHOUSE from '../assets/penthouse.jpg';
+
 const properties = [
   {
     id: 1,
@@ -8,7 +15,7 @@ const properties = [
     location: "Nairobi, Kenya",
     price: "KSh 50,000,000",
     description: "A stunning villa located in the heart of Nairobi, with a modern design and spacious rooms.",
-    imageUrl: "/images/villa.jpg"
+    imageUrl: VILLA,
   },
   {
     id: 2,
@@ -16,7 +23,7 @@ const properties = [
     location: "Mombasa, Kenya",
     price: "KSh 25,000,000",
     description: "A sleek, modern apartment with ocean views and close proximity to the beach.",
-    imageUrl: "/images/apartment.jpg"
+    imageUrl: APARTMENT
   },
   {
     id: 3,
@@ -24,7 +31,7 @@ const properties = [
     location: "Naivasha, Kenya",
     price: "KSh 15,000,000",
     description: "A charming cottage in the serene environment of Naivasha, perfect for a quiet retreat.",
-    imageUrl: "/images/cottage.jpg"
+    imageUrl: COTTAGE
   },
   {
     id: 4,
@@ -32,7 +39,7 @@ const properties = [
     location: "Nairobi, Kenya",
     price: "KSh 70,000,000",
     description: "A luxurious penthouse with panoramic city views located in the prestigious Westlands district.",
-    imageUrl: "/images/penthouse.jpg"
+    imageUrl: PENTHOUSE,
   },
   {
     id: 5,
@@ -40,7 +47,7 @@ const properties = [
     location: "Malindi, Kenya",
     price: "KSh 40,000,000",
     description: "A beautiful beach house offering breathtaking views of the Indian Ocean.",
-    imageUrl: "/images/beach-house.jpg"
+    imageUrl: BEACHHOUSE
   },
   {
     id: 6,
@@ -48,7 +55,7 @@ const properties = [
     location: "Nairobi, Kenya",
     price: "KSh 60,000,000",
     description: "A spacious townhouse located in the serene suburb of Karen, with lush gardens and modern amenities.",
-    imageUrl: "/images/townhouse.jpg"
+    imageUrl: TOWNHOUSE
   }
 ];
 
