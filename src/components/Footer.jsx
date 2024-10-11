@@ -19,17 +19,17 @@ const Footer = () => {
           <h4>Quick Links</h4>
           <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Properties</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#properties">Properties</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
 
         <div className="footer-contact">
           <h4>Contact Us</h4>
           <ul>
-            <li>Email: info@primetemplerealestate.com</li>
-            <li>Phone: +254 700 123 456</li>
+            <li>Email: templegrouplimited@gmail.com</li>
+            <li>Phone: +254 797 273159</li>
             <li>Location: Nairobi, Kenya</li>
           </ul>
         </div>

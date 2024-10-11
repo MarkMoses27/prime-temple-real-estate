@@ -1,77 +1,57 @@
-import React from 'react';
-import './SearchBar.css'; // Import the CSS file for styling
+import React, { useState } from 'react';
+import './SearchBar.css';
+import properties from '../data/properties';
 
-const SearchBar = ({ onSearch }) => {
-  const [searchCriteria, setSearchCriteria] = React.useState({
-    location: '',
-    propertyType: '',
-    propertyStatus: '',
-    priceLimit: '',
-  });
+const SearchBar = ({ onSearchResults }) => {
+  const [location, setLocation] = useState('');
+  const [propertyType, setPropertyType] = useState('');
+  const [propertyStatus, setPropertyStatus] = useState('');
+  const [priceLimit, setPriceLimit] = useState('');
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setSearchCriteria((prev) => ({ ...prev, [name]: value }));
-  };
+  const handleSearch = () => {
+    const filteredProperties = properties.filter(property => {
+      return (
+        (location === '' || property.location === location) &&
+        (propertyType === '' || property.type === propertyType) &&
+        (propertyStatus === '' || property.status === propertyStatus) &&
+        (priceLimit === '' || property.price <= parseInt(priceLimit))
+      );
+    });
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    onSearch(searchCriteria);
+    onSearchResults(filteredProperties);
   };
 
   return (
     <div className="search-bar-container">
-      <form className="search-bar" onSubmit={handleSearch}>
-        <select
-          name="location"
-          value={searchCriteria.location}
-          onChange={handleInputChange}
-          className="search-input"
-        >
+      <div className="search-bar">
+        <select value={location} onChange={(e) => setLocation(e.target.value)} className="search-input">
           <option value="">Select City</option>
-          <option value="nairobi">Nairobi</option>
-          <option value="mombasa">Mombasa</option>
-          <option value="kisumu">Kisumu</option>
-          <option value="nakuru">Nakuru</option>
-          <option value="eldoret">Eldoret</option>
+          <option value="Nairobi">Nairobi</option>
+          <option value="Mombasa">Mombasa</option>
+          <option value="Kisumu">Kisumu</option>
+          <option value="Nakuru">Nakuru</option>
+          <option value="Eldoret">Eldoret</option>
         </select>
-
-        <select
-          name="propertyType"
-          value={searchCriteria.propertyType}
-          onChange={handleInputChange}
-          className="search-input"
-        >
+        <select value={propertyType} onChange={(e) => setPropertyType(e.target.value)} className="search-input">
           <option value="">Property Type</option>
-          <option value="house">House</option>
-          <option value="apartment">Apartment</option>
-          <option value="villa">Villa</option>
+          <option value="House">House</option>
+          <option value="Apartment">Apartment</option>
+          <option value="Villa">Villa</option>
         </select>
-
-        <select
-          name="propertyStatus"
-          value={searchCriteria.propertyStatus}
-          onChange={handleInputChange}
-          className="search-input"
-        >
+        <select value={propertyStatus} onChange={(e) => setPropertyStatus(e.target.value)} className="search-input">
           <option value="">Status</option>
-          <option value="rent">For Rent</option>
-          <option value="sale">For Sale</option>
+          <option value="For Rent">For Rent</option>
+          <option value="For Sale">For Sale</option>
         </select>
-
-        <input
-          type="number"
-          name="priceLimit"
-          placeholder="Max Price"
-          value={searchCriteria.priceLimit}
-          onChange={handleInputChange}
+        <input 
+          type="number" 
+          placeholder="Max Price" 
+          value={priceLimit} 
+          onChange={(e) => setPriceLimit(e.target.value)} 
           className="search-input"
         />
-
-        <button type="submit" className="search-button">
-          Search
-        </button>
-      </form>
+        <button className="search-button" onClick={handleSearch}>Search</button>
+      </div>
     </div>
   );
 };

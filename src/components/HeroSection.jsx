@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import './HeroSection.css'; // Assuming your CSS file is named HeroSection.css
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
+import './HeroSection.css'; 
 
-// Import your images
 import HERO1 from '../assets/hero.jpg';
 import HERO2 from '../assets/hero1.jpg';
 import HERO3 from '../assets/hero2.png';
@@ -15,19 +15,22 @@ const HeroSection = () => {
       image: HERO1,
       title: 'Welcome to Prime Temple Real Estate',
       subtitle: 'Your trusted partner for property management and investment solutions.',
-      cta: 'Explore Properties'
+      cta: 'Explore Properties',
+      link: '/properties'  
     },
     {
       image: HERO2,
       title: 'Discover Luxurious Living',
       subtitle: 'Explore our curated collection of premium properties.',
-      cta: 'View Listings'
+      cta: 'View Listings',
+      link: '/properties'  
     },
     {
       image: HERO3,
       title: 'Expert Investment Guidance',
       subtitle: 'Let our experienced team help you make informed real estate decisions.',
-      cta: 'Contact Us'
+      cta: 'Contact Us',
+      link: '/contact'  // Link to the contact page
     }
   ];
 
@@ -35,7 +38,7 @@ const HeroSection = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000); // Slide every 5 seconds
 
     return () => clearInterval(timer);
   }, []);
@@ -51,7 +54,10 @@ const HeroSection = () => {
           <div className="hero-content">
             <h1>{slide.title}</h1>
             <p>{slide.subtitle}</p>
-            <button className="cta-button">{slide.cta}</button>
+            {/* Use Link for CTA button to navigate to the appropriate route */}
+            <Link to={slide.link} className="cta-button">
+              {slide.cta}
+            </Link>
           </div>
         </div>
       ))}
